@@ -1,0 +1,21 @@
+{
+  "name": "ilograph",
+  "owner": {
+    "name": "Ilograph LLC",
+    "url": "https://www.ilograph.com"
+  },
+  "description": "Agent skills for Ilograph diagramming",
+  "plugins": [
+    {
+      "name": "ilograph-skills",
+      "source": "./",
+      "description": "Agent skills for creating detailed, auditable, and interactive Ilograph diagrams of a codebase.",
+      "category": "engineering",
+      "keywords": [
+        "ilograph",
+        "diagram",
+        "code"
+      ]
+    }
+  ]
+}

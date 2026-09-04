@@ -1,0 +1,21 @@
+{
+  "name": "ilograph-skills",
+  "version": "0.0.1",
+  "description":  "Agent skills for creating detailed, auditable, and interactive Ilograph diagrams of a codebase.",
+  "author": {
+    "name": "Ilograph LLC",
+    "url": "https://www.ilograph.com"
+  },
+  "homepage": "https://github.com/ilograph/skills",
+  "repository": "https://github.com/ilograph/skills",
+  "license": "Apache 2.0",
+  "keywords": [
+    "ilograph",
+    "diagram",
+    "code"
+  ],
+  "skills": [
+    "./skills/generate-ilograph",
+    "./skills/update-ilograph"
+  ]
+}
