@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./img/header.png" alt="Ilograph Agent Skills">
-    <p style="font-size: 18px"><strong>Create detailed, auditable Ilograph sequence diagrams of a codebase in minutes</strong></p>
+    <p style="font-size: 18px"><strong>Create detailed, auditable, and interactive sequence diagrams of a codebase in minutes</strong></p>
     <img src="./img/sequence.gif" alt="Animation of a user browsing an Ilograph diagram, and clicking a code link">
     <p><em>Browsing a sequence and following a code citation link to GitHub</em></p>
     <p><strong><a href="#installation">Installation</a> · <a href="#usage">Usage</a> · <a href="#examples">Examples</a> · <a href="#why-ilograph">Why Ilograph</a></strong></p>
@@ -86,3 +86,7 @@ Sequence flows in Ilograph diagrams can be nested, meaning there is practically 
 
 ### Stability
 Ilograph diagrams are defined in a declarative syntax (YAML), allowing both humans and agents to iterate on existing diagrams instead of re-creating them from scratch when a codebase changes.
+
+## Discussion
+
+Please join the [Ilograph Discussion on GitHub](https://github.com/orgs/ilograph/discussions) to share feedback and ideas.
