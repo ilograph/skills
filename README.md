@@ -3,7 +3,7 @@
     <p style="font-size: 18px"><strong>Create detailed, auditable, and interactive sequence diagrams of a codebase in minutes</strong></p>
     <img src="./img/sequence.gif" alt="Animation of a user browsing an Ilograph diagram, and clicking a code link">
     <p><em>Browsing a sequence and following a code citation link to GitHub</em></p>
-    <p><strong><a href="#installation">Installation</a> · <a href="#usage">Usage</a> · <a href="#examples">Examples</a> · <a href="#why-ilograph">Why Ilograph</a></strong></p>
+    <p><strong><a href="#installation">Installation</a> · <a href="#usage">Usage</a> · <a href="#examples">Examples</a> · <a href="#why-ilograph">Why Ilograph</a> · <a href="#discussion">Discussion</a></strong></p>
 </div>
 
 This repository contains [agent skills](https://agentskills.io/specification) for creating detailed, auditable, and interactive [Ilograph](https://www.ilograph.com) sequence diagrams of a codebase.
