@@ -11,8 +11,12 @@
   "license": "Apache 2.0",
   "keywords": [
     "ilograph",
-    "diagram",
-    "code"
+    "diagrams",
+    "code",
+    "architecture",
+    "modelling",
+    "documentation",
+    "devtools"
   ],
   "skills": [
     "./skills/generate-ilograph",

@@ -10,11 +10,15 @@
       "name": "ilograph-skills",
       "source": "./",
       "description": "Agent skills for creating detailed, auditable, and interactive Ilograph diagrams of a codebase.",
-      "category": "engineering",
+      "category": "architecture",
       "keywords": [
         "ilograph",
-        "diagram",
-        "code"
+        "diagrams",
+        "code",
+        "architecture",
+        "modelling",
+        "documentation",
+        "devtools"
       ]
     }
   ]
