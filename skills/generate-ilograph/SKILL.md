@@ -83,7 +83,7 @@ When writing descriptions/notes, use plain English and a technical, formal writi
 
 ### Resources section
 
-#### Abstract types
+#### Abstract types (non-AWS resources)
 
 Create abstract types that act as reusable style definitions. Common ones include packages, modules, classes, and external services. Top-level "package" abstract types have a `dashed` style and a slightly tinted background color, by convention.
 
@@ -149,6 +149,10 @@ External services: no color specified, or `Dimgray`
 - Batchfile, Makefile, Shell: `"#427819"`
 
 Other colors to consider: `DarkSlateBlue`, `SteelBlue`, `CadetBlue`, `DarkCyan`, `Firebrick`, `DarkGreen`, `DarkRed`
+
+#### Abstract types for AWS resources
+
+Ilograph has built-in abstract types for AWS, so these don't need to be specified. See the "AWS services and resources" section below for information on using these built-in abstract types.
 
 #### Resource hierarchy
 
@@ -364,7 +368,9 @@ Networking/workstation.svg
 
 ##### AWS, Azure, GCP resources
 
-These icons would be used when (and only when) diagramming a solution built to run on one of these cloud platforms. There are too many to list here, if cloud icons are needed see the full list of built-in Ilograph icons under ./references/iconlist.txt
+These icons would be used when (and only when) diagramming a solution built to run on one of these cloud platforms. There are too many to list here, if cloud icons are needed see the full list of built-in Ilograph icons under ./references/iconlist.txt.
+
+Special note for AWS icons: for codebases that use AWS extensively, it is better to use the built-in AWS abstract types than use AWS icons directly. See the "AWS services and resources" section below.
 
 #### Code references in prose
 
@@ -398,6 +404,68 @@ Also add resource per external system (databases, APIs, CDNs). Group related end
   - name: REST API
   - name: GraphQL API
 ```
+
+#### AWS services and resources (skip if codebase doesn't use AWS)
+
+As mentioned above, Ilograph has built-in abstract types for AWS.
+
+To use these types, first **import** them at the top of the yaml file, above the "resources" section, like so:
+
+```yaml
+# start of YAML file
+imports: 
+- from: ilograph/aws
+  namespace: AWS
+
+resources:
+# ...
+```
+
+Then, give each AWS resource an `instanceOf:` value from `./references/aws_types.txt`. This file is broken up into two sections: *service types* and *instance types*.
+
+- *Service types* are for AWS services themselves, such as `EC2` or `S3`.
+- *Instance types* are for *instances* of AWS resources, such as an S3 Bucket or DynamoDB table.
+
+Use these values in the `instanceOf:` field for resources. Prefix each value (service or instance) with "AWS::", like so:
+
+```yaml
+imports: 
+- from: ilograph/aws
+  namespace: AWS
+
+resources:
+  # ...
+- name: <resource name>
+  instanceOf: AWS::<type>
+  # ...
+```
+
+It is common, but not required, to specify AWS instance resources as children of AWS service resources, like in the following example:
+
+```yaml
+resources:
+# ...
+- name: Amazon CloudFront
+  instanceOf: AWS::CloudFront # service type
+  description: <description>
+  children:
+  - name: Image Distribution
+    instanceOf: AWS::CloudFront::Distribution  # instance type
+    description: <description>
+
+  - name: Admin UI Distribution
+    instanceOf: AWS::CloudFront::Distribution # instance type
+    description: <description>
+
+  - name: Legacy Image Distribution
+    instanceOf: AWS::CloudFront::Distribution # instance type
+    description: <description>
+# ...
+```
+
+Specifying instance resources as children of an AWS service resource can generally be skipped if there is only one instance resource for that service. In these cases, the service resource will be omitted and the instance resource will be a top-level resource.
+
+In rare cases, the service and/or instance abstract type may be missing (possibly because it is new). In these cases, instead of specifying a type to inherit using `instanceOf:`, use either the AWS icon directly (if it is present), or a suitable generic icon, or no icon.
 
 ### Perspectives section
 
